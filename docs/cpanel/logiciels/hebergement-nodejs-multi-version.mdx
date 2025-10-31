@@ -161,9 +161,6 @@ répondre et le sous dossier dans lequel cela va être installé (peut être vid
 sur le nom de domaine)
   - **Application startup file** : il faut définir le fichier `.js` qui sert à lancer l'application. Ce fichier doit être
 présent dans le dossier défini dans **Application Root**. Il s'agit souvent d'un fichier `server.js`
-  - **Passenger log file** : il s'agit du fichier de log que va créer
-[Phusion Passenger](https://www.phusionpassenger.com/docs/tutorials/what_is_passenger/), qui est le moteur d'exécution
-de nodeJS utilisé sur l'hébergement. Utile pour le débug.
   - **Add Variable** permet de créer des variables d'environnements, vous pouvez passer des paramètres à votre application
 de cette manière-là
 
@@ -207,11 +204,8 @@ sera nécessaire
 Généralement cela correspond à un dossier à la racine de votre hébergement. Ce dossier-là est souvent différent du
 dossier avec lequel peut être associé le nom de domaine.
   - **Application URL** permet de choisir sur quelle URL répondra l'application
-  - **Application startup file` est le fichier, contenu dans le dossier défini par le `Application root` qui permet de
+  - **Application startup file** est le fichier, contenu dans le dossier défini par le `Application root` qui permet de
 lancer l'application. Il s'agit souvent d'un fichier `server.js` ou `index.js`
-  - **Passenger log file** est le chemin vers le fichier de log que va utiliser
-[Phusion Passenger](https://www.phusionpassenger.com/docs/tutorials/what_is_passenger/) qui correspond à la technologie
-utilisée pour proposer nodeJS en contexte mutualisé
   - **Detected configuration files** : détecte les fichiers de configuration à la racine de votre projet nodeJS
 (`package.json`) et lance `npm` pour installer les dépendances
   - **Add Variable** vous permet de passer des variables d'environnement à votre application, pour passer la configuration
@@ -269,10 +263,7 @@ représente un risque, car lorsque l'application est stoppé, les fichiers de vo
 accessible si l'application est déployé dans le même dossier que le nom de domaine.
 :::
 
-<span className="badge badge--danger">4</span> On en profite pour définir un fichier de log d'erreur via le réglage
-**Passenger Log File**.
-
-<span className="badge badge--danger">5</span> Puis on valide en cliquant sur **Create**
+<span className="badge badge--danger">4</span> Puis on valide en cliquant sur **Create**
 
 ### Installation de l'utilitaire Ghost-Cli
 
@@ -560,8 +551,6 @@ PassengerAppEnv development
 PassengerFriendlyErrorPages on
 PassengerAppLogFile "/home/chemin_a_changer/error.log"
 ```
-
-Les erreurs sont également loguées dans l'outil [erreurs](/cpanel/mesures/erreurs-apache) de cPanel.
 
 ### Erreur de mémoire ou processus Node/NPM
 

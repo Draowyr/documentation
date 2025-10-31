@@ -61,8 +61,8 @@ Si vous souhaitez connaître la syntaxe cron fournie par un plugin, vous pouvez 
 Ensuite, il faut définir la commande à exécuter. Plusieurs variantes sont possibles et il y a également plusieurs pièges
 courants. Voici les formats de commandes les plus courants :
 
-* `wget -qO /dev/null 'http://mon-site.fr/dossier/cron.php?param1=valeur&param2=valeur`<br />
-  * Il ne faut pas oublier la partie `-o /dev/null` sinon un fichier va se générer à la racine de votre hébergement à chaque exécution de la tâche.<br />
+* `wget -q -O /dev/null "http://mon-site.fr/dossier/cron.php?param1=valeur&param2=valeur"`<br />
+  * Il ne faut pas oublier la partie `-O /dev/null` sinon un fichier va se générer à la racine de votre hébergement à chaque exécution de la tâche.<br />
   * Il faut bien placer l'adresse web entre double guillemet, c'est très important et d'autant plus si vous faites un passage de paramètres dans l'adresse comme `?param1=valeur&param2=valeur`.<br />
   * Attention, la méthode WGET peut entraîner un dépassement du délai d'attente web, qui est fixé à 360 secondes (soit 5 minutes).<br />
 
